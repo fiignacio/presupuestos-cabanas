@@ -174,10 +174,9 @@ input, select, button {
   gap: 2rem;
 }
 
-/* Make preview section scrollable horizontally on mobile */
+/* Make preview section adjust naturally */
 .preview-section {
   width: 100%;
-  overflow-x: auto;
   padding-bottom: 1rem;
 }
 
@@ -209,8 +208,6 @@ input, select, button {
   top: 2rem;
   display: flex;
   flex-direction: column;
-  /* Prevent the invoice from collapsing on mobile so the PDF export stays perfect */
-  min-width: 750px; 
 }
 
 .invoice-header {

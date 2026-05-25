@@ -102,6 +102,13 @@ export default function PassengerRegistration() {
 
   const handleExportPDF = () => {
     const element = invoiceRef.current;
+    const originalWidth = element.style.width;
+    const originalMinWidth = element.style.minWidth;
+    
+    // Forzar ancho de escritorio para que el PDF salga perfecto aunque estemos en móvil
+    element.style.width = '800px';
+    element.style.minWidth = '800px';
+
     const opt = {
       margin: 1,
       filename: `Confirmacion Reserva-${titular || 'SinTitular'}.pdf`,
@@ -109,7 +116,11 @@ export default function PassengerRegistration() {
       html2canvas: { scale: 2 },
       jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
-    html2pdf().set(opt).from(element).save();
+    
+    html2pdf().set(opt).from(element).save().then(() => {
+      element.style.width = originalWidth;
+      element.style.minWidth = originalMinWidth;
+    });
   };
 
   return (
