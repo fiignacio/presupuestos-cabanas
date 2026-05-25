@@ -161,6 +161,10 @@ input, select, button {
 }
 
 /* Layout */
+.responsive-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
 .app-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -168,6 +172,13 @@ input, select, button {
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 2rem;
+}
+
+/* Make preview section scrollable horizontally on mobile */
+.preview-section {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1rem;
 }
 
 @media (max-width: 992px) {
@@ -198,6 +209,8 @@ input, select, button {
   top: 2rem;
   display: flex;
   flex-direction: column;
+  /* Prevent the invoice from collapsing on mobile so the PDF export stays perfect */
+  min-width: 750px; 
 }
 
 .invoice-header {
@@ -343,5 +356,42 @@ input, select, button {
     border: 1px solid #ddd;
     padding: 2rem;
     border-radius: 8px;
+    min-width: auto;
+  }
+}
+
+/* Mobile Responsiveness for Form Elements */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .responsive-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .glass-panel {
+    padding: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  /* Counter Group mobile adjustments */
+  .counter-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .counter-controls {
+    width: 100%;
+    justify-content: space-between;
   }
 }

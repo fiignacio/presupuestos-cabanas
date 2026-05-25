@@ -130,7 +130,7 @@ function App() {
 
   return (
     <>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '1.5rem 2rem 0', display: 'flex', gap: '1rem' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '1.5rem 2rem 0', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
         <button 
           style={{ 
             padding: '12px 24px', 

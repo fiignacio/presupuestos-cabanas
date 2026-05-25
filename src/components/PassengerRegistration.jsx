@@ -146,7 +146,7 @@ export default function PassengerRegistration() {
         <div className="glass-panel" style={{ marginBottom: '2rem' }}>
           <h2><Plane size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }}/> Detalles del Viaje</h2>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gap: '1rem' }} className="responsive-grid-2">
             <div className="input-group" style={{ gridColumn: '1 / -1' }}>
               <label>Titular de la Reserva</label>
               <input type="text" className="form-control" value={titular} onChange={e => setTitular(e.target.value)} placeholder="Ej: Juan Pérez" />
